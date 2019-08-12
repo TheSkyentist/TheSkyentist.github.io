@@ -111,6 +111,18 @@
 
 						<div class="row">
 
+						<section class="6u 12u(narrower)">
+								<div class="box post">
+									<a href="https://www.iaugalaxies2019.com/" target="_blank" class="image left"><img src="images/NSF.jpeg" alt="" /></a>
+									<div class="inner">
+										<p><b>IAGU Galaxies 2019</b><br>
+										In June 2019 I presented a poster at the IAU Galaxies Conference on JWST color selectin of high-redshift LyA Dropouts.<br>
+										<a href="https://www.iaugalaxies2019.com/" target="_blank" class="button">Learn More</a>
+										</p>
+									</div>
+								</div>
+							</section>
+
 							<section class="6u 12u(narrower)">
 								<div class="box post">
 									<a href="https://salt-conference-2018.salt.ac.za" target="_blank" class="image left"><img src="images/Advances.jpg" alt="" /></a>
@@ -123,6 +135,10 @@
 								</div>
 							</section>
 							
+
+							
+					<div class="row">
+
 							<section class="6u 12u(narrower)">
 								<div class="box post">
 									<a href="https://arxiv.org/abs/1810.02819" target="_blank" class="image left"><img src="images/Hviding2018.png" alt="" /></a>
@@ -134,9 +150,7 @@
 									</div>
 								</div>
 							</section>
-							
-					<div class="row">
-					
+
 							<section class="6u 12u(narrower)">
 								<div class="box post">
 									<a href="https://arxiv.org/abs/1711.01269" target="_blank" class="image left"><img src="images/MNRAS.png" alt="" /></a>
@@ -148,18 +162,7 @@
 									</div>
 								</div>
 							</section>
-							
-							<section class="6u 12u(narrower)">
-								<div class="box post">
-									<a href="http://www.ilurs.org/" target="_blank" class="image left"><img src="images/ILURS.jpg" alt="" /></a>
-									<div class="inner">
-										<p><b>ILURS</b><br>
-										I presented my work on AGN classification at the Ivy League Undergraduate Research Symposium at the University of Pennsylvania.  <br>
-										<a href="http://www.ilurs.org/" target="_blank" class="button">Learn More</a>
-										</p>
-									</div>
-								</div>
-							</section>
+				
 						</div>
 					</div>
 				</section>

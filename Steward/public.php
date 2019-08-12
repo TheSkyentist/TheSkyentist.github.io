@@ -111,11 +111,11 @@
 
 							<section class="6u 12u(narrower)">
 								<div class="box post">
-									<a href="http://www.teenastronomycafe.org/" target="_blank" class="image left"><img src="images/cafe-group.jpg" alt="" /></a>
+									<a href="https://astronomyontap.org/locations/tucson-az/" target="_blank" class="image left"><img src="images/ReionizationDrafts.png" alt="" /></a>
 									<div class="inner">						
-										<p><b>Teen Astronomy Café</b><br>
-										I have worked several times with the Teen Astro Café which offers high school students opportunities to interact with astronomers and experiment with relevant coding exercises.<br>
-										<a href="http://www.teenastronomycafe.org/" target="_blank" class="button">Learn More</a>
+										<p><b>Space Drafts</b><br>
+										I presented on my work with JWST at Tucson's Space Drafts, alongside <a href="http://p-senchyna.com/" target="_blank">Peter Senchyna</a>, we connected small nearby galaxies to the first galaxies observable with JWST. <br>
+										<a href="https://astronomyontap.org/locations/tucson-az/" target="_blank" class="button">Learn More</a>
 										</p>
 									</div>
 								</div>
@@ -123,11 +123,11 @@
 							
 							<section class="6u 12u(narrower)">
 								<div class="box post">
-									<a href="https://www.outdoors.org/outdoor-activities/astronomy.cfm" target="_blank" class="image left"><img src="images/mountofstars.jpg" alt="" /></a>
+									<a href="https://susd30.us/schools/sahuarita-middle-school/" target="_blank" class="image left"><img src="images/CareerDay.jpg" alt="" /></a>
 									<div class="inner">						
-										<p><b>Mountains of Stars</b><br>
-										I returned to the NH White Mountains in summer of '19 to work with the AMC and Carthage College doing solar and nighttime observing at the lodges and high mountain huts.<br>
-										<a href="https://www.outdoors.org/outdoor-activities/astronomy.cfm" target="_blank" class="button">Learn More</a>
+										<p><b>Career Day</b><br>
+										I ran a booth at hte Sahuarita Middle School Career Fair, getting the next generation excited about not only Astronomy, but science and the University of Arizona!<br>
+										<a href="https://susd30.us/schools/sahuarita-middle-school/" target="_blank" class="button">Learn More</a>
 										</p>
 									</div>
 								</div>
@@ -137,30 +137,28 @@
 						<div class="row">
 						
 							<section class="6u 12u(narrower)">
-								<div class="box post">
-									<a href="http://www.hermanheyn.com/" target="_blank" class="image left"><img src="images/sidewalk.jpg" alt="" /></a>
-									<div class="inner">						
-										<p><b>Sidewalk Astronomy</b><br>
-										In Baltimore I worked with Herman Heyn, the Sidewalk Astronomer, who has provided astronomy on street corners all over the city for over thirty years.<br>
-										<a href="http://www.hermanheyn.com/" target="_blank" class="button">Learn More</a>
-										</p>
+									<div class="box post">
+										<a href="http://www.teenastronomycafe.org/" target="_blank" class="image left"><img src="images/cafe-group.jpg" alt="" /></a>
+										<div class="inner">						
+											<p><b>Teen Astronomy Café</b><br>
+											I have worked several times with the Teen Astro Café which offers high school students opportunities to interact with astronomers and experiment with relevant coding exercises.<br>
+											<a href="http://www.teenastronomycafe.org/" target="_blank" class="button">Learn More</a>
+											</p>
+										</div>
 									</div>
-								</div>
-							</section>
-														
-						<section class="6u 12u(narrower)">
-								<div class="box post">
-									<a href="http://www.saao.ac.za/outreach/" target="_blank" class="image left"><img src="images/Langa.jpg" alt="" /></a>
-									<div class="inner">
-										<p><b>Cape Town</b><br>
-										Through the South African Astronomical Observatory I taught at the Mokone Primary School in the Langa suburb of Cape Town, teaching young learners about the solar system. <br> 
-										<a href="http://www.saao.ac.za/outreach/" target="_blank" class="button">Learn More</a>
-										</p>
+								</section>							
+								
+								<section class="6u 12u(narrower)">
+									<div class="box post">
+										<a href="https://www.outdoors.org/outdoor-activities/astronomy.cfm" target="_blank" class="image left"><img src="images/mountofstars.jpg" alt="" /></a>
+										<div class="inner">						
+											<p><b>Mountains of Stars</b><br>
+											I returned to the NH White Mountains in summer of '19 to work with the AMC and Carthage College doing solar and nighttime observing at the lodges and high mountain huts.<br>
+											<a href="https://www.outdoors.org/outdoor-activities/astronomy.cfm" target="_blank" class="button">Learn More</a>
+											</p>
+										</div>
 									</div>
-								</div>
-							</section>
-							
-
+								</section>	
 
 						</div>
 					</div>
