@@ -66,36 +66,47 @@
 					<div class="container">
 					
 					<div class="row">
-					
-							<section class="6u 12u(narrower)">
+				
+						<section class="6u 12u(narrower)">
+							<div class="box post">
+								<a href="https://www.iaugalaxies2019.com/" target="_blank" class="image left"><img src="images/NSF.jpeg" alt="" /></a>
+								<div class="inner">
+									<p><b>IAGU Galaxies 2019</b><br>
+									In June 2019 I presented a poster at the IAU Galaxies Conference on JWST color selectin of high-redshift LyA Dropouts.<br>
+									<a href="https://www.iaugalaxies2019.com/" target="_blank" class="button">Learn More</a>
+									</p>
+								</div>
+							</div>
+						</section>
+
+						<section class="6u 12u(narrower)">
 								<div class="box post">
-									<a href="https://salt-conference-2018.salt.ac.za/" target="_blank" class="image left"><img src="images/Advances.jpg" alt="" /></a>
-									<div class="inner">
-										<p><b>Advances with SALT</b><br>
-										In November 2018 I gave a talk on the large scale ionization features in NGC1068 studied with SALT Fabry Perot at the Advances with SALT conference.<br>
-										<a href="https://salt-conference-2018.salt.ac.za/" target="_blank" class="button">Learn More</a>
+									<a href="https://astronomyontap.org/locations/tucson-az/" target="_blank" class="image left"><img src="images/ReionizationDrafts.png" alt="" /></a>
+									<div class="inner">						
+										<p><b>Space Drafts</b><br>
+										I presented on my work with JWST at Tucson's Space Drafts, alongside <a href="http://p-senchyna.com/" target="_blank">Peter Senchyna</a>, we connected small nearby galaxies to the first galaxies observable with JWST. <br>
+										<a href="https://astronomyontap.org/locations/tucson-az/" target="_blank" class="button">Learn More</a>
 										</p>
 									</div>
 								</div>
-							</section>
+							</section>		
 							
-							<section class="6u 12u(narrower)">
+						</div>
+					
+					<div class="row">
+
+						<section class="6u 12u(narrower)">
 								<div class="box post">
-									<a href="https://arxiv.org/abs/1810.02819" target="_blank" class="image left"><img src="images/Hviding2018.png" alt="" /></a>
+									<a href="https://www.nsfgrfp.org/" target="_blank" class="image left"><img src="images/NSF.jpeg" alt="" /></a>
 									<div class="inner">
-										<p><b>High-z LIERs with Grizli</b><br>
-										I was lead author on a paper providing the first evidence for the non-AGN origin of LINER-like emission out to high redshifts in the Astrophysics Journal.<br>
-										<a href="https://arxiv.org/abs/1810.02819" target="_blank" class="button">Learn More</a>
+										<p><b>NSF GRFP</b><br>
+										I was awarded the NSF Graduate Research Fellowship, which will support my graduate studies at the University of Arizona.<br>
+										<a href="https://www.nsfgrfp.org/" target="_blank" class="button">Learn More</a>
 										</p>
 									</div>
 								</div>
 							</section>
 
-							
-						</div>
-					
-					<div class="row">
-					
 							<section class="6u 12u(narrower)">
 								<div class="box post">
 									<a href="https://www.as.arizona.edu/graduate-program-astronomy-2" target="_blank" class="image left"><img src="images/Steward.jpg" alt="" /></a>
@@ -107,18 +118,8 @@
 									</div>
 								</div>
 							</section>
-												
-							<section class="6u 12u(narrower)">
-								<div class="box post">
-									<a href="https://arxiv.org/abs/1711.01269" target="_blank" class="image left"><img src="images/MNRAS.png" alt="" /></a>
-									<div class="inner">
-										<p><b>WISE AGN with SALT</b><br>
-										My paper on follow up optical spectroscopy of heavily obscured AGN candidates identified with WISE was <a href="https://arxiv.org/abs/1711.01269" target="_blank">accepted</a> to the MNRAS. <br>
-										<a href="https://arxiv.org/abs/1711.01269" target="_blank" class="button">Learn More</a>
-										</p>
-									</div>
-								</div>
-							</section>				
+
+
 						</div>						
 					</div>
 				</section>

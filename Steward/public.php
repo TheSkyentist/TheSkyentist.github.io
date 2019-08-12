@@ -126,7 +126,7 @@
 									<a href="https://susd30.us/schools/sahuarita-middle-school/" target="_blank" class="image left"><img src="images/CareerDay.jpg" alt="" /></a>
 									<div class="inner">						
 										<p><b>Career Day</b><br>
-										I ran a booth at hte Sahuarita Middle School Career Fair, getting the next generation excited about not only Astronomy, but science and the University of Arizona!<br>
+										I ran a booth at the Sahuarita Middle School Career Fair, getting the next generation excited about not only Astronomy, but science and the University of Arizona!<br>
 										<a href="https://susd30.us/schools/sahuarita-middle-school/" target="_blank" class="button">Learn More</a>
 										</p>
 									</div>
