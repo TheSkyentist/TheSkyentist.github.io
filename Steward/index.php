@@ -69,7 +69,7 @@
 				
 						<section class="6u 12u(narrower)">
 							<div class="box post">
-								<a href="https://www.iaugalaxies2019.com/" target="_blank" class="image left"><img src="images/NSF.jpeg" alt="" /></a>
+								<a href="https://www.iaugalaxies2019.com/" target="_blank" class="image left"><img src="images/IAU.jpg" alt="" /></a>
 								<div class="inner">
 									<p><b>IAGU Galaxies 2019</b><br>
 									In June 2019 I presented a poster at the IAU Galaxies Conference on JWST color selectin of high-redshift LyA Dropouts.<br>
