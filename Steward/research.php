@@ -56,7 +56,8 @@
 											<header>
 												<h2>Astronomy Research</h2>
 												<p>Graduate Student at Steward Observatory</p>
-												<p><font size="+1">You can download my research resume <a href="files/REHresearch.pdf" target="_blank">here</a>.</font></p>
+												<p>NSF Graduate Student Fellow</p>
+												<p><font size="+1">You can download my research resume <a href="files/research.pdf" target="_blank">here</a>.</font></p>
 											</header>
 												<span class="image featured"><img src="images/JAGUAR.jpg" alt="" /></span>
 											

@@ -59,7 +59,7 @@
 											<header>
 												<h2>Astronomy Outreach</h2>
 												<p><em>The universe is cool enough without making up crap about it.</em> <b>Phil Plait</b></p>					
-												<p> <font size="+1">You can download my outreach resume <a href="files/REHoutreach.pdf" target="_blank">here</a>.</font> </p>
+												<p> <font size="+1">You can download my outreach resume <a href="files/public.pdf" target="_blank">here</a>.</font> </p>
 											</header>	
 											<span class="image featured"><img src="images/public.jpg" alt="" /></span>
 
