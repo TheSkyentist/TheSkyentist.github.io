@@ -129,10 +129,10 @@
 				<section id="cta" class="wrapper style3">
 					<div class="container">
 						<header>
-							<a href="https://www.instagram.com/theskyentistofficial/" target="_blank" class="button">Instagram</a>
-							<a href="https://twitter.com/The_Skyentist?lang=en" target="_blank" class="button">Twitter</a>
-							<a href="https://www.flickr.com/photos/135292418@N03/albums" target="_blank" class="button">Flickr</a>
-						</header>
+							<a href="https://www.instagram.com/a_skyentist/" target="_blank" class="button">Instagram</a>
+							<a href="https://twitter.com/a_skyentist" target="_blank" class="button">Twitter</a>
+							<a href="https://www.flickr.com/photos/135292418@N03/" target="_blank" class="button">Flickr</a>
+						</header> 
 					</div>
 				</section>
 
