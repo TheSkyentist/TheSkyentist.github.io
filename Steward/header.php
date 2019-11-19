@@ -1,5 +1,5 @@
 	<head>
-		<title>Raphael E. Hviding | Home</title>
+		<title>Raphael E. Hviding</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/php5shiv.js"></script><![endif]-->
