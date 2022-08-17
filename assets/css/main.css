@@ -1928,7 +1928,7 @@
 		}
 
 	footer {
-		margin: 0 0 3em 0;
+		margin: 0 0 1em 0;
 	}
 
 		footer > :last-child {
@@ -2136,7 +2136,7 @@
 
 		ul.icons li {
 			display: inline-block;
-			line-height: 1em;
+			line-height: 3.5em;
 			padding-left: 1.5em;
 		}
 
@@ -2147,6 +2147,7 @@
 			ul.icons li a, ul.icons li span {
 				font-size: 2em;
 				border: 0;
+				color: #ffffff;
 			}
 
 	ul.actions {
@@ -2579,7 +2580,7 @@
 
 	#cta {
 		text-align: center;
-		padding: 1em 0;
+		padding: 0em 0;
 	}
 
 		#cta header h2 {
@@ -2596,7 +2597,7 @@
 /* Footer */
 
 	#footer {
-		padding: 4em 0 8em 0;
+		padding: 1em 0 1em 0;
 	}
 
 		#footer a {
@@ -2675,7 +2676,7 @@
 				}
 
 			ul.icons li a, ul.icons li span {
-				font-size: 1.5em;
+				font-size: 3.5em;
 			}
 
 		/* Header */
@@ -2703,7 +2704,7 @@
 		/* CTA */
 
 			#cta {
-				padding: 2em 0;
+				padding: 0em 0;
 			}
 
 		/* Footer */
