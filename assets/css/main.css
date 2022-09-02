@@ -2416,6 +2416,9 @@
 					color: #fff;
 				}
 
+				#nav > ul > li.top-level {
+					font-weight: 600;
+				}
 				#nav > ul > li.current {
 					font-weight: 600;
 				}
