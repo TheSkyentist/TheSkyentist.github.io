@@ -5,7 +5,7 @@ import re
 
 # Source and Target List
 source = 'index.html'
-targets = ['about.html','research.html','dei.html','public.html','telescope.html',]
+targets = ['about.html','research.html','dei.html','public.html','telescope.html','redirect.html']
 
 # Go through targets and replace
 for target in targets:
