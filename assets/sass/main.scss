@@ -1,74 +1,124 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-@import url("font-awesome.min.css");
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
 /*
 	Arcana by HTML5 UP
-	html5up.net | @n33co
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-	@import "libs/skel";
 
-	@include skel-breakpoints((
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 980px)',
-		narrower: '(max-width: 840px)',
-		mobile: '(max-width: 736px)',
-		mobilep: '(max-width: 480px)'
+// Breakpoints.
+
+	@include breakpoints((
+		wide:      ( 1281px,  1680px ),
+		normal:    ( 981px,   1280px ),
+		narrow:    ( 841px,   980px  ),
+		narrower:  ( 737px,   840px  ),
+		mobile:    ( 481px,   736px  ),
+		mobilep:   ( null,    480px  )
 	));
 
-	@include skel-layout((
-		reset: 'full',
-		boxModel: 'border',
-		grid: ( gutters: (50px, 50px) ),
-		conditionals: true,
-		containers: 1400px,
-		breakpoints: (
-			wide: (
-				containers: 1200px,
-				grid: (
-					gutters: (40px, 40px)
-				),
-			),
-			normal: (
-				containers: 960px,
-				grid: (
-					gutters: (30px, 30px)
-				),
-			),
-			narrow: (
-				containers: 95%,
-			),
-			narrower: (
-				containers: (95%, true),
-			),
-			mobile: (
-				containers: (90%, true),
-				grid: (
-					gutters: (20px, 20px)
-				),
-			),
-			mobilep: (
-				containers: (100%, true)
-			)
-		)
-	));
+// Reset.
+// Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
+
+	html, body, div, span, applet, object,
+	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+	pre, a, abbr, acronym, address, big, cite,
+	code, del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var, b,
+	u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+	form, label, legend, table, caption, tbody,
+	tfoot, thead, tr, th, td, article, aside,
+	canvas, details, embed, figure, figcaption,
+	footer, header, hgroup, menu, nav, output, ruby,
+	section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style:none;
+	}
+
+	blockquote,	q {
+		quotes: none;
+
+		&:before,
+		&:after {
+			content: '';
+			content: none;
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+	mark {
+		background-color: transparent;
+		color: inherit;
+	}
+
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	input, select, textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+	}
 
 /* Basic */
 
-	body {
-		background: _palette(bg) url('images/bg01.png');
-
-		&.is-loading {
-			* {
-				@include vendor('transition', 'none !important');
-				@include vendor('animation', 'none !important');
-			}
+	// Set box model to border-box.
+	// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+		html {
+			box-sizing: border-box;
 		}
+
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+
+	body {
+		background: _palette(bg) url('images/heather.png');
+
+		// Stops initial animations until page loads.
+			&.is-preload {
+				*, *:before, *:after {
+					@include vendor('animation', 'none !important');
+					@include vendor('transition', 'none !important');
+				}
+			}
+
 	}
 
 	body, input, select, textarea {
@@ -153,6 +203,70 @@
 		font-style: italic;
 		padding: 1em 0 1em 2em;
 	}
+
+/* Container */
+
+	.container {
+		margin: 0 auto;
+		max-width: 100%;
+		width: 1400px;
+
+		@include breakpoint('<=wide') {
+			width: 1200px;
+		}
+
+		@include breakpoint('<=normal') {
+			width: 960px;
+		}
+
+		@include breakpoint('<=narrow') {
+			width: 95%;
+		}
+
+		@include breakpoint('<=narrower') {
+			width: 95%;
+		}
+
+		@include breakpoint('<=mobile') {
+			width: 90%;
+		}
+
+		@include breakpoint('<=mobilep') {
+			width: 100%;
+		}
+	}
+
+/* Row */
+
+	.row {
+		@include html-grid((50px, 50px));
+
+		@include breakpoint('<=wide') {
+			@include html-grid((40px, 40px), 'wide');
+		}
+
+		@include breakpoint('<=normal') {
+			@include html-grid((30px, 30px), 'normal');
+		}
+
+		@include breakpoint('<=narrow') {
+			@include html-grid((30px, 30px), 'narrow');
+		}
+
+		@include breakpoint('<=narrower') {
+			@include html-grid((30px, 30px), 'narrower');
+		}
+
+		@include breakpoint('<=mobile') {
+			@include html-grid((20px, 20px), 'mobile');
+		}
+
+		@include breakpoint('<=mobilep') {
+			@include html-grid((20px, 20px), 'mobilep');
+		}
+	}
+
+/* Section/Article */
 
 	section, article {
 		&.special {
@@ -256,10 +370,6 @@
 		color: _palette(fg-light);
 	}
 
-	.formerize-placeholder {
-		color: _palette(fg-light);
-	}
-
 /* Image */
 
 	.image {
@@ -317,11 +427,27 @@
 			display: none;
 		}
 
+		&:before {
+			line-height: inherit;
+		}
+
+		&.solid {
+			&:before {
+				font-weight: 900;
+			}
+		}
+
+		&.brands {
+			&:before {
+				font-family: 'Font Awesome 5 Brands';
+			}
+		}
+
 		&.major {
 			text-align: center;
 			cursor: default;
 			background-color: _palette(accent, bg);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/bg01.png")'));
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 			color: _palette(accent, fg);
 			border-radius: 100%;
 			display: inline-block;
@@ -340,91 +466,170 @@
 /* Lists */
 
 	ol {
-		&.default {
-			list-style: decimal;
-			padding-left: 1.25em;
+		list-style: decimal;
+		padding-left: 1.25em;
 
-			li {
-				padding-left: 0.25em;
-			}
+		li {
+			padding-left: 0.25em;
 		}
 	}
 
 	ul {
-		&.default {
-			list-style: disc;
-			padding-left: 1em;
+		list-style: disc;
+		padding-left: 1em;
 
-			li {
-				padding-left: 0.5em;
+		li {
+			padding-left: 0.5em;
+		}
+	}
+
+/* Links */
+
+	ul.links {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			line-height: 2.5em;
+			padding-left: 0;
+		}
+	}
+
+/* Icons */
+
+	ul.icons {
+		cursor: default;
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			display: inline-block;
+			line-height: 1em;
+			padding-left: 1.5em;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			a, span {
+				font-size: 2em;
+				border: 0;
 			}
 		}
+	}
 
-		&.links {
-			li {
-				line-height: 2.5em;
+/* Menu */
+
+	ul.menu {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			border-left: solid 1px _palette(border);
+			display: inline-block;
+			padding: 0 0 0 1em;
+			margin: 0 0 0 1em;
+
+			&:first-child
+			{
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0;
 			}
 		}
+	}
 
-		&.icons {
-			cursor: default;
+/* Actions */
+
+	ul.actions {
+		@include vendor('display', 'flex');
+		cursor: default;
+		list-style: none;
+		margin-left: -1em;
+		padding-left: 0;
+
+		li {
+			padding: 0 0 0 1em;
+			vertical-align: middle;
+		}
+
+		&.special {
+			@include vendor('justify-content', 'center');
+			width: 100%;
+			margin-left: 0;
 
 			li {
-				display: inline-block;
-				line-height: 1em;
-				padding-left: 1.5em;
-
 				&:first-child {
 					padding-left: 0;
 				}
+			}
+		}
 
-				a, span {
-					font-size: 2em;
-					border: 0;
+		&.stacked {
+			@include vendor('flex-direction', 'column');
+			margin-left: 0;
+
+			li {
+				padding: 1.25em 0 0 0;
+
+				&:first-child {
+					padding-top: 0;
 				}
 			}
 		}
 
-		&.actions {
-			cursor: default;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+		&.fit {
+			width: calc(100% + 1em);
 
 			li {
-				display: inline-block;
-				padding: 0 0 0 1.5em;
+				@include vendor('flex-grow', '1');
+				@include vendor('flex-shrink', '1');
+				width: 100%;
 
-				&:first-child {
-					padding: 0;
+				> * {
+					width: 100%;
 				}
 			}
 
-			&.vertical {
+			&.stacked {
+				width: 100%;
+			}
+		}
+
+		@include breakpoint('<=mobile') {
+			&:not(.fixed) {
+				@include vendor('flex-direction', 'column');
+				margin-left: 0;
+				width: 100% !important;
+
 				li {
-					display: block;
-					padding: 1.5em 0 0 0;
+					@include vendor('flex-grow', '1');
+					@include vendor('flex-shrink', '1');
+					padding: 1em 0 0 0;
+					text-align: center;
+					width: 100%;
+
+					> * {
+						width: 100%;
+					}
 
 					&:first-child {
-						padding: 0;
+						padding-top: 0;
 					}
-				}
-			}
-		}
 
-		&.menu {
-			li {
-				border-left: solid 1px _palette(border);
-				display: inline-block;
-				padding: 0 0 0 1em;
-				margin: 0 0 0 1em;
+					input[type="submit"],
+					input[type="reset"],
+					input[type="button"],
+					button,
+					.button {
+						width: 100%;
 
-				&:first-child
-				{
-					border-left: 0;
-					margin-left: 0;
-					padding-left: 0;
+						&.icon {
+							&:before {
+								margin-left: -0.5em;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -456,7 +661,7 @@
 
 			thead {
 				background-color: #555555;
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/bg01.png")'));
+				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 				color: #fff;
 			}
 
@@ -473,10 +678,11 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
+	button,
 	.button {
 		@include vendor('appearance', 'none');
 		@include vendor('transition', 'background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out');
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/bg01.png")'));
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 		background-color: _palette(accent, bg);
 		border-radius: _size(radius);
 		border: 0;
@@ -567,7 +773,7 @@
 		text-align: center;
 		padding: 3em 0 0 0;
 		background-color: #fff;
-		background-image:			url('images/bg02.png'),		url('images/bg02.png'),		url('images/bg01.png');
+		background-image:			url('images/gradient-up.png'),		url('images/gradient-up.png'),		url('images/heather.png');
 		background-position:		top left,					top left,					top left;
 		background-size:			100% 6em,					100% 6em,					auto;
 		background-repeat:			no-repeat,					no-repeat,					repeat;
@@ -587,7 +793,7 @@
 	#nav {
 		cursor: default;
 		background-color: #333;
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/bg01.png")'));
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
 		padding: 0;
 
 		&:after {
@@ -596,7 +802,7 @@
 			width: 100%;
 			height: 0.75em;
 			background-color: _palette(accent, bg);
-			background-image: url("images/bg01.png");
+			background-image: url("images/heather.png");
 		}
 
 		> ul {
@@ -639,7 +845,7 @@
 						left: 50%;
 						margin-left: -0.375em;
 						background-color: _palette(accent, bg);
-						background-image: url("images/bg01.png");
+						background-image: url("images/heather.png");
 					}
 
 					a {
@@ -669,14 +875,15 @@
 /* Dropotron */
 
 	.dropotron {
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0))', 'url("images/heather.png")'));
 		background-color: #333;
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0))', 'url("images/bg01.png")'));
 		border-radius: _size(radius);
 		color: #fff;
 		min-width: 10em;
 		padding: 1em 0;
 		text-align: center;
 		box-shadow: 0 1em 1em 0 rgba(0,0,0,0.5);
+		list-style: none;
 
 		> li {
 			line-height: 2em;
@@ -761,7 +968,7 @@
 
 		&.style2 {
 			background-color:		#fff;
-			background-image:		url('images/bg02.png'),			url('images/bg03.png'),			url('images/bg01.png');
+			background-image:		url('images/gradient-up.png'),			url('images/gradient-down.png'),			url('images/heather.png');
 			background-position:	top left,						bottom left,					top left;
 			background-size:		100% 6em,						100% 6em,						auto;
 			background-repeat:		no-repeat,						no-repeat,						repeat;
@@ -769,7 +976,7 @@
 
 		&.style3 {
 			background-color: _palette(accent, bg);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/bg01.png")'));
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 			color: _palette(accent, fg);
 
 			.button {
@@ -845,7 +1052,7 @@
 
 /* Wide */
 
-	@include breakpoint(wide) {
+	@include breakpoint('<=wide') {
 
 		/* Basic */
 
@@ -864,7 +1071,7 @@
 
 /* Normal */
 
-	@include breakpoint(normal) {
+	@include breakpoint('<=normal') {
 
 		/* Basic */
 
@@ -876,22 +1083,19 @@
 		/* Lists */
 
 			ol {
-				&.default {
-					list-style: decimal;
-					padding-left: 1.25em;
+				padding-left: 1.25em;
 
-					li {
-						padding-left: 0.25em;
-					}
+				li {
+					padding-left: 0.25em;
 				}
 			}
 
-			ul {
-				&.icons {
-					li {
-						a, span {
-							font-size: 1.5em;
-						}
+		/* Icons */
+
+			ul.icons {
+				li {
+					a, span {
+						font-size: 1.5em;
 					}
 				}
 			}
@@ -938,7 +1142,7 @@
 
 /* Narrow */
 
-	@include breakpoint(narrow) {
+	@include breakpoint('<=narrow') {
 
 		/* Basic */
 
@@ -955,7 +1159,7 @@
 		display: none;
 	}
 
-	@include breakpoint(narrower) {
+	@include breakpoint('<=narrower') {
 
 		/* Basic */
 
@@ -1064,9 +1268,21 @@
 				.container {
 					margin-bottom: 4em;
 				}
+
+				form .actions {
+					@include vendor('justify-content', 'center');
+					width: 100%;
+					margin-left: 0;
+
+					li {
+						&:first-child {
+							padding-left: 0;
+						}
+					}
+				}
 			}
 
-		/* Off-Canvas Navigation */
+		/* Nav */
 
 			#page-wrapper {
 				@include vendor('backface-visibility', 'hidden');
@@ -1086,7 +1302,7 @@
 				width: 100%;
 				z-index: _misc(z-index-base) + 1;
 				background-color: #333;
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/bg01.png")'));
+				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
 				height: 44px;
 				line-height: 44px;
 				box-shadow: 0 4px 0 0 _palette(accent, bg);
@@ -1106,7 +1322,7 @@
 				}
 
 				.toggle {
-					@include icon;
+					@include icon(false, solid);
 					border: 0;
 					height: 60px;
 					left: 0;
@@ -1119,6 +1335,7 @@
 						content: '\f0c9';
 						display: block;
 						height: 44px;
+						line-height: inherit;
 						text-align: center;
 						width: 44px;
 						color: #fff;
@@ -1136,7 +1353,7 @@
 			#navPanel {
 				background-color: #1f1f1f;
 				box-shadow: inset -1px 0 3px 0 rgba(0,0,0,0.5);
-				@include vendor('background-image', ('linear-gradient(left, rgba(0,0,0,0) 75%, rgba(0,0,0,0.15))', 'url("images/bg01.png")'));
+				@include vendor('background-image', ('linear-gradient(left, rgba(0,0,0,0) 75%, rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 				@include vendor('backface-visibility', 'hidden');
 				@include vendor('transform', 'translateX(#{_size(navPanel) * -1})');
 				@include vendor('transition', ('transform #{_duration(navPanel)} ease'));
@@ -1195,7 +1412,7 @@
 
 /* Mobile */
 
-	@include breakpoint(mobile) {
+	@include breakpoint('<=mobile') {
 
 		/* Basic */
 
@@ -1237,17 +1454,15 @@
 				}
 			}
 
-		/* Lists */
+		/* Menu */
 
-			ul {
-				&.menu {
-					li {
-						border: 0;
-						padding: 0;
-						margin: 0;
-						display: block;
-						line-height: 2em;
-					}
+			ul.menu {
+				li {
+					border: 0;
+					padding: 0;
+					margin: 0;
+					display: block;
+					line-height: 2em;
 				}
 			}
 
@@ -1267,22 +1482,7 @@
 
 /* Mobile (Portrait) */
 
-	@include breakpoint(mobilep) {
-
-		/* Lists */
-
-			ul {
-				&.actions {
-					li {
-						display: block;
-						padding: 1.5em 0 0 0;
-
-						&:first-child {
-							padding: 0;
-						}
-					}
-				}
-			}
+	@include breakpoint('<=mobilep') {
 
 		/* Icon */
 
@@ -1304,6 +1504,7 @@
 			input[type="submit"],
 			input[type="reset"],
 			input[type="button"],
+			button,
 			.button {
 				width: 100%;
 				display: block;
