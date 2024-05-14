@@ -22,14 +22,14 @@
 		text-transform: none !important;
 
 		@if ($category == brands) {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: FontAwesome;
 		}
 		@else if ($category == solid) {
-			font-family: 'Font Awesome 5 Free';
+			font-family: FontAwesome;
 			font-weight: 900;
 		}
 		@else {
-			font-family: 'Font Awesome 5 Free';
+			font-family: FontAwesome;
 			font-weight: 400;
 		}
 
@@ -76,3 +76,16 @@
 	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
 
 }
+
+/// Applies a fade-in transition to an element.
+@mixin fade-in {
+    opacity: 0;
+    position: relative;
+    &.fade-in {
+      opacity: 0.5; // Override opacity to 1 when the fade-in class is applied
+      top: -1em; /* Adjust the vertical position (move up) */
+      transition: opacity 5s ease; // Define the transition properties
+      transition: top 5 ease; /* Specify the transition property and duration */
+    }
+  }
+  

@@ -57,7 +57,7 @@
 	}
 
 	ol, ul {
-		list-style:none;
+		list-style: none;
 	}
 
 	blockquote,	q {
@@ -136,9 +136,14 @@
 		border-bottom: dotted 1px;
 
 		&:hover {
-			color: _palette(accent, bg);
+			color: _palette(accent, bg-bold);
 			border-bottom-color: transparent;
 		}
+
+        &:active {
+            color: _palette(accent, bg-light);
+            border-bottom-color: transparent;
+        }
 	}
 
 	strong, b {
@@ -285,7 +290,7 @@
 
 		&.major {
 			text-align: center;
-			margin: 0 0 2em 0;
+			margin: 1em 0 2em 0;
 
 			h2 {
 				font-size: 2.25em;
@@ -300,6 +305,12 @@
 				font-size: 1.5em;
 				letter-spacing: -0.025em;
 			}
+
+            img {
+                width:auto;
+                height:auto;
+                max-height:12em;
+            }
 		}
 	}
 
@@ -414,6 +425,18 @@
 				width: 100%;
 			}
 		}
+
+        &.circle {
+			vertical-align: middle;
+			margin: 0 1em 0em 1em;
+            border-radius: 50%;
+            border: 5px solid _palette(accent, bg);
+
+			img {
+                vertical-align: middle;
+				width: 100%;
+			}
+		}
 	}
 
 /* Icon */
@@ -439,27 +462,37 @@
 
 		&.brands {
 			&:before {
-				font-family: 'Font Awesome 5 Brands';
+				font-family: FontAwesome;
 			}
 		}
 
 		&.major {
 			text-align: center;
-			cursor: default;
+			cursor: pointer;
 			background-color: _palette(accent, bg);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+			// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+            @include vendor('transition', 'background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out');
 			color: _palette(accent, fg);
 			border-radius: 100%;
 			display: inline-block;
-			width: 5em;
-			height: 5em;
-			line-height: 5em;
-			box-shadow: 0 0 0 7px white, 0 0 0 8px _palette(border);
-			margin: 0 0 2em 0;
+			width: 6em;
+			height: 6em;
+			line-height: 6em;
+			// box-shadow: 0 0 0 7px white, 0 0 0 8px _palette(border);
+			margin: 1em 0 1em 0;
 
 			&:before {
-				font-size: 36px;
+				font-size: 45px;
 			}
+
+            &:hover {
+                background-color: _palette(accent, bg-bold);
+            }
+
+
+            &:active {
+                background-color: _palette(accent, bg-light);
+            }
 		}
 	}
 
@@ -504,15 +537,15 @@
 
 		li {
 			display: inline-block;
-			line-height: 1em;
-			padding-left: 1.5em;
+			line-height: 4em;
+			padding-left: 2em;
 
 			&:first-child {
 				padding-left: 0;
 			}
 
 			a, span {
-				font-size: 2em;
+				font-size: 3.5em;
 				border: 0;
 			}
 		}
@@ -661,15 +694,15 @@
 
 			thead {
 				background-color: #555555;
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+				// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 				color: #fff;
 			}
 
-			tfoot {
-			}
+			// tfoot {
+			// }
 
-			tbody {
-			}
+			// tbody {
+			// }
 		}
 	}
 
@@ -682,7 +715,7 @@
 	.button {
 		@include vendor('appearance', 'none');
 		@include vendor('transition', 'background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out');
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+		// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 		background-color: _palette(accent, bg);
 		border-radius: _size(radius);
 		border: 0;
@@ -698,12 +731,12 @@
 		letter-spacing: -0.025em;
 
 		&:hover {
-			background-color: lighten(_palette(accent, bg), 5);
+			background-color: _palette(accent, bg-bold);
 			color: _palette(accent, fg) !important;
 		}
 
 		&:active {
-			background-color: darken(_palette(accent, bg), 5);
+			background-color: _palette(accent, bg-light);
 			color: _palette(accent, fg);
 		}
 
@@ -712,11 +745,11 @@
 			color: #fff;
 
 			&:hover {
-				background-color: lighten(#555555, 5);
+				background-color: #111;
 			}
 
 			&:active {
-				background-color: darken(#555555, 5);
+				background-color: #777;
 			}
 		}
 
@@ -771,12 +804,12 @@
 
 	#header {
 		text-align: center;
-		padding: 3em 0 0 0;
+		padding: 0 0 0 0;
 		background-color: #fff;
-		background-image:			url('images/gradient-up.png'),		url('images/gradient-up.png'),		url('images/heather.png');
-		background-position:		top left,					top left,					top left;
-		background-size:			100% 6em,					100% 6em,					auto;
-		background-repeat:			no-repeat,					no-repeat,					repeat;
+		background-image:url('images/gradient-up.png'),url('images/gradient-up.png'),url('images/heather.png');
+		background-position:top left,top left,top left;
+		background-size:100% 6em,100% 6em,auto;
+		background-repeat:no-repeat,no-repeat,repeat;
 
 		h1 {
 			padding: 0 0 2.75em 0;
@@ -792,17 +825,17 @@
 
 	#nav {
 		cursor: default;
-		background-color: #333;
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
+		background-color: #111;
+		// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
 		padding: 0;
 
 		&:after {
 			content: '';
 			display: block;
 			width: 100%;
-			height: 0.75em;
+			height: 0.69em;
 			background-color: _palette(accent, bg);
-			background-image: url("images/heather.png");
+			// background-image: url("images/heather.png");
 		}
 
 		> ul {
@@ -818,7 +851,7 @@
 					text-decoration: none;
 					border: 0;
 					display: block;
-					padding: 1.5em 0.5em 1.35em 0.5em;
+					padding: 0.75em 0.5em 0.6em 0.5em;
 				}
 
 				&:first-child {
@@ -843,9 +876,9 @@
 						position: absolute;
 						bottom: -0.5em;
 						left: 50%;
-						margin-left: -0.375em;
+						margin-left: 0em;
 						background-color: _palette(accent, bg);
-						background-image: url("images/heather.png");
+						// background-image: url("images/heather.png");
 					}
 
 					a {
@@ -875,8 +908,8 @@
 /* Dropotron */
 
 	.dropotron {
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0))', 'url("images/heather.png")'));
-		background-color: #333;
+		// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0))', 'url("images/heather.png")'));
+		background-color: #111;
 		border-radius: _size(radius);
 		color: #fff;
 		min-width: 10em;
@@ -914,28 +947,41 @@
 /* Banner */
 
 	#banner {
-		background-image: url('../../images/banner.jpg');
+		background-image: url('../../images/banner.gif');
 		background-position: center center;
 		background-size: cover;
-		height: 28em;
-		text-align: center;
+		height: 100%;
+		text-align: left;
 		position: relative;
 
 		header {
 			position: absolute;
-			bottom: 0;
-			left: 0;
+			top: 30%;
+			left: 10%;
 			width: 100%;
-			background: #212121;
-			background: rgba(27,27,27,0.75);
+			// background: rgba(27,27,27,0.75);
 			color: #fff;
 			padding: 1.5em 0;
+            vertical-align: middle;
+
+            // Apply the fade-in effect when the header is in view
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(0);
+                }
+                to {
+                    opacity: 0.5;
+                    transform: translateY(-2em);
+                }
+            }
 
 			h2 {
 				display: inline-block;
 				margin: 0;
 				font-size: 1.25em;
 				vertical-align: middle;
+                @include vendor('animation', 'fadeIn 1.5s ease-out forwards');
 
 				em {
 					opacity: 0.75;
@@ -948,6 +994,12 @@
 						border-bottom-color: transparent;
 					}
 				}
+
+                img {
+                    // opacity: 50%;
+                    width: 50%;
+                    // min-height: 1em;
+                }
 			}
 
 			.button {
@@ -960,7 +1012,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 5em 0 3em 0;
+		padding: 0em 0em 1em 0;
 
 		&.style1 {
 			background: #fff;
@@ -976,7 +1028,7 @@
 
 		&.style3 {
 			background-color: _palette(accent, bg);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+			// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 			color: _palette(accent, fg);
 
 			.button {
@@ -994,7 +1046,24 @@
 
 	#cta {
 		text-align: center;
-		padding: 3.5em 0;
+		padding: 0.5em 0 0 0;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+
+    		&:hover {
+                color: _palette(accent, bg-bold);
+                border-bottom-color: transparent;
+            }
+    
+            &:active {
+                color: _palette(accent, bg-light);
+                border-bottom-color: transparent;
+            }
+        }
+
+
 
 		header {
 			h2 {
@@ -1006,6 +1075,13 @@
 			.button {
 				vertical-align: middle;
 				margin-left: 1em;
+
+				color: _palette(accent, fg);
+
+				// &:hover {
+				// 	color: _palette(accent, bg) !important;
+				// }
+
 			}
 		}
 	}
@@ -1013,7 +1089,7 @@
 /* Footer */
 
 	#footer {
-		padding: 4em 0 8em 0;
+		padding: 0em 0 0em 0;
 
 		a {
 			color: inherit;
@@ -1026,7 +1102,7 @@
 		}
 
 		.container {
-			margin-bottom: 4em;
+			margin-bottom: 0em;
 		}
 
 		.icons {
@@ -1044,7 +1120,7 @@
 
 		.copyright {
 			color: _palette(fg-light);
-			margin-top: 1.5em;
+			margin-top: 0em;
 			text-align: center;
 			font-size: 0.9em;
 		}
@@ -1061,11 +1137,11 @@
 				line-height: 1.5em;
 			}
 
-		/* Banner */
+		// /* Banner */
 
-			#banner {
-				height: 24em;
-			}
+		// 	#banner {
+		// 		height: 24em;
+		// 	}
 
 	}
 
@@ -1094,8 +1170,9 @@
 
 			ul.icons {
 				li {
+                    line-height: 4em;
 					a, span {
-						font-size: 1.5em;
+						font-size: 3.5em;
 					}
 				}
 			}
@@ -1103,29 +1180,31 @@
 		/* Header */
 
 			#header {
-				padding: 2em 0 0 0;
+				padding: 0em 0 0 0;
 
 				h1 {
 					padding: 0 0 1.75em 0;
+
 				}
+
 			}
 
-		/* Banner */
+		// /* Banner */
 
-			#banner {
-				height: 20em;
-			}
+			// #banner {
+			// 	height: 20em;             
+			// }
 
 		/* Wrapper */
 
 			.wrapper {
-				padding: 3em 0 1em 0;
+				padding: 1em 0 1em 0;
 			}
 
 		/* CTA */
 
 			#cta {
-				padding: 2em 0;
+				padding: 0.5em 0 0 0;
 			}
 
 		/* Footer */
@@ -1186,6 +1265,7 @@
 
 					h2 {
 						font-size: 1.75em;
+                        margin-top: -2em;
 					}
 
 					p {
@@ -1231,12 +1311,17 @@
 		/* Banner */
 
 			#banner {
-				height: 20em;
+				// height: 20em;
 
 				header {
 					h2 {
 						display: block;
-					}
+
+                        // img {
+                        //     height: 15em;
+                        // }
+                    }
+
 
 					.button {
 						margin: 1em 0 0 0;
@@ -1247,7 +1332,7 @@
 		/* CTA */
 
 			#cta {
-				padding: 1.5em 0;
+				padding: 0.5em 0 0 0;
 
 				header {
 					h2 {
@@ -1301,8 +1386,8 @@
 				top: 0;
 				width: 100%;
 				z-index: _misc(z-index-base) + 1;
-				background-color: #333;
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
+				background-color: #111;
+				// @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3))', 'url("images/heather.png")'));
 				height: 44px;
 				line-height: 44px;
 				box-shadow: 0 4px 0 0 _palette(accent, bg);
@@ -1353,7 +1438,7 @@
 			#navPanel {
 				background-color: #1f1f1f;
 				box-shadow: inset -1px 0 3px 0 rgba(0,0,0,0.5);
-				@include vendor('background-image', ('linear-gradient(left, rgba(0,0,0,0) 75%, rgba(0,0,0,0.15))', 'url("images/heather.png")'));
+				// @include vendor('background-image', ('linear-gradient(left, rgba(0,0,0,0) 75%, rgba(0,0,0,0.15))', 'url("images/heather.png")'));
 				@include vendor('backface-visibility', 'hidden');
 				@include vendor('transform', 'translateX(#{_size(navPanel) * -1})');
 				@include vendor('transition', ('transform #{_duration(navPanel)} ease'));
@@ -1468,9 +1553,9 @@
 
 		/* Banner */
 
-			#banner {
-				height: 18em;
-			}
+			// #banner {
+			// 	height: 18em;
+			// }
 
 		/* Wrapper */
 
@@ -1531,7 +1616,7 @@
 		/* Banner */
 
 			#banner {
-				height: 20em;
+				// height: 20em;
 
 				header {
 					padding: 20px;
@@ -1547,7 +1632,7 @@
 		/* CTA */
 
 			#cta {
-				padding: 20px;
+				padding: 0.5em 0 0 0;
 			}
 
 		/* Footer */
