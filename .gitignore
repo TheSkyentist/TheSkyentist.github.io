@@ -1,2 +1,5 @@
 # Ignore .DS_Store
 .DS_Store
+
+# Ignore CSS (It will be compiled)
+main.css
