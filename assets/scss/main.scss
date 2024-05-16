@@ -981,7 +981,7 @@
 				margin: 0;
 				font-size: 1.25em;
 				vertical-align: middle;
-                @include vendor('animation', 'fadeIn 1.5s ease-out forwards');
+                @include vendor('animation', 'fadeIn 1s ease forwards');
 
 				em {
 					opacity: 0.75;
