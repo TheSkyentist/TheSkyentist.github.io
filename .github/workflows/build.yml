@@ -68,15 +68,12 @@ jobs:
       - name: Deploy to SFTP
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq lftp sshpass
-          export SSHPASS="$SFTP_PASSWORD"
-          lftp -e "
-            set sftp:connect-program 'sshpass -e ssh -a -x -p 2222 -o StrictHostKeyChecking=no';
-            set net:max-retries 3;
-            set net:reconnect-interval-base 5;
-            mirror --reverse --delete --verbose --parallel=4 output/ www/hviding-mpia/;
-            quit
-          " -u "$SFTP_USER", sftp://vwebfile.gwdg.de
+          pip install paramiko
+          python deploy_sftp.py
         env:
+          SFTP_HOST: vwebfile.gwdg.de
+          SFTP_PORT: "2222"
           SFTP_USER: raphael.hviding
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          LOCAL_DIR: output
+          REMOTE_DIR: www/hviding-mpia
