@@ -1,0 +1,97 @@
+{% extends "base.html" %} {% block content %}
+<!-- Banner -->
+<section id="banner">
+    <header>
+        <h2 class="fade-in">
+            <img src="{{ SITEURL }}/images/RH-logo.svg" /><br />
+            Professional Astronomer (He/His)
+        </h2>
+    </header>
+</section>
+
+<!-- Gigantic Heading -->
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row">
+            <section class="col-3 col-12-narrower">
+                <header class="major">
+                    <img
+                        class="image circle"
+                        src="{{ SITEURL }}/images/headshot.png"
+                    />
+                </header>
+            </section>
+            <section class="col-9 col-12-narrower">
+                <header class="major">
+                    <h2><em>Hello! Welcome to my website!</em></h2>
+                    {{ page.content }}
+                </header>
+            </section>
+        </div>
+    </div>
+</section>
+
+<!-- Highlights -->
+<section class="wrapper style2">
+    <div class="container">
+        <div class="row 200%">
+            <section class="col-4 col-12-narrower">
+                <div class="box highlight">
+                    <i class="icon major fa-comments"
+                        ><a href="{{ SITEURL }}/public.html"></a
+                    ></i>
+                    <h3>
+                        <a href="{{ SITEURL }}/public.html">Public Astronomy</a>
+                    </h3>
+                    <p>
+                        As much as I love exploring the universe through
+                        research, I take on an active role in seeking outreach
+                        programs in my local community to increase the
+                        availability of astronomy within the general public.
+                    </p>
+                </div>
+            </section>
+            <section class="col-4 col-12-narrower">
+                <div class="box highlight">
+                    <i class="icon major fa-keyboard-o"
+                        ><a href="{{ SITEURL }}/research.html"></a
+                    ></i>
+                    <h3>
+                        <a href="{{ SITEURL }}/research.html"
+                            >Astronomy Research</a
+                        >
+                    </h3>
+                    <p>
+                        I am a Postdoctoral Researcher at the Max-Planck
+                        Institute for Astronomy working with
+                        <a
+                            href="https://www.mpia.de/institute/staff/122099"
+                            target="_blank"
+                            >Dr. Ivelina Momcheva</a
+                        >
+                        and as a member of the Data Science Group.
+                    </p>
+                </div>
+            </section>
+            <section class="col-4 col-12-narrower">
+                <div class="box highlight">
+                    <i class="icon major fa-group"
+                        ><a href="{{ SITEURL }}/telescope.html"></a
+                    ></i>
+                    <h3>
+                        <a href="{{ SITEURL }}/telescope.html"
+                            >Diversity, Equity, and Inclusion</a
+                        >
+                    </h3>
+                    <p>
+                        In order to affect systematic change in astronomy, I was
+                        a primary organizer for Astrocharlas, a program which
+                        provides spanish-speaking undergraduates with experience
+                        and a professional network.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}

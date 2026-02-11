@@ -1,61 +1,66 @@
 name: build-site
 
-on: 
+on:
   push:
   pull_request:
   workflow_dispatch:
   schedule:
-  #https://jasonet.co/posts/scheduled-actions/
-  #        ┌───────────── minute (0 - 59)
-  #        │ ┌───────────── hour (0 - 23)
-  #        │ │ ┌───────────── day of the month (1 - 31)
-  #        │ │ │ ┌───────────── month (1 - 12)
-  #        │ │ │ │ ┌───────────── day of the week (0 - 6) Sun-Mon...Sat
-  #        │ │ │ │ │
-  #        │ │ │ │ │
-  #        │ │ │ │ │
-  #        * * * * *
-  - cron: '0 0 1 * *'
+    #https://jasonet.co/posts/scheduled-actions/
+    #        ┌───────────── minute (0 - 59)
+    #        │ ┌───────────── hour (0 - 23)
+    #        │ │ ┌───────────── day of the month (1 - 31)
+    #        │ │ │ ┌───────────── month (1 - 12)
+    #        │ │ │ │ ┌───────────── day of the week (0 - 6) Sun-Mon...Sat
+    #        │ │ │ │ │
+    #        │ │ │ │ │
+    #        │ │ │ │ │
+    #        * * * * *
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@main
-      with:
-        persist-credentials: false
-        fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@main
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
-    - name: Compile CSS from SCSS files
-      uses: gha-utilities/sass-build@master
-      with: 
-        source: assets/scss/main.scss
-        destination: assets/css/main.css
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@master
+        with:
+          source: theme/static/scss/main.scss
+          destination: theme/static/css/main.css
 
-    - name: Set up Python
-      uses: actions/setup-python@main
-      with:
-        python-version: "3.12"
-      
-    - name: Build the site
-      run: |
-        ./headfoot.py
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: "3.12"
 
-    - name: Commit changes
-      run: |
-        touch .nojekyll
-        rm .gitignore
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Update documentation" -a || true
+      - name: Install Pelican
+        run: |
+          pip install "pelican[markdown]"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: true
+      - name: Build the site
+        run: |
+          pelican content -o output -s pelicanconf.py
+
+      - name: Commit changes
+        run: |
+          cd output
+          touch .nojekyll
+          git init
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update documentation" -a || true
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          directory: output
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true

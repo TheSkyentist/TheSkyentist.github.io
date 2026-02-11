@@ -3,3 +3,18 @@
 
 # Ignore CSS (It will be compiled)
 main.css
+
+# Pelican output directory
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+# pixi environments
+.pixi/*
+!.pixi/config.toml

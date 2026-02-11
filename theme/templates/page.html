@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+			<section class="wrapper style1">
+				<div class="container">
+					<div id="content">
+
+						<!-- Content -->
+
+						<article>
+							<header>
+								<h2>{{ page.title }}</h2>
+								{% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+							</header>
+							{% if page.featured_image %}
+							<span class="image featured"><img src="{{ SITEURL }}/images/{{ page.featured_image }}" alt="" /></span>
+							{% endif %}
+							{{ page.content }}
+						</article>
+
+					</div>
+				</div>
+			</section>
+{% endblock %}

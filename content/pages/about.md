@@ -1,0 +1,10 @@
+Title: Raphael Erik Hviding (He/His)
+Slug: about
+save_as: about.html
+Featured_image: griffith.jpg
+
+As a child, my favorite VHS was a 1997 [Eyewitness Documentary](https://www.youtube.com/watch?v=pypDWDTdiy4) about the planets. Ever since then the universe has continued to intrigue me, instilling a passion for physics and mathematics throughout middle and high school. The allure of discovery and experimentation that drove me to the sciences motivated my involvement in research in the astronomy department at Dartmouth during my undergraduate studies. Now, this has led to my position as a graduate student at the University of Arizona where I work with incredible mentors and peers and have gotten the chance to do what I love most. To fully take advantage of my time as a graduate student researcher, I endeavor to involve myself in department events, projects, conferences, and talks, expanding my horizons towards specific fields in and outside of my own. My pursuit of a wide variety of projects and numerous different research foci has made me feel just as in my childhood, keeping me spellbound as I marvel over the beauty of the universe in ways I had never imagined.
+
+![Friends]({static}/images/friends.jpg)
+
+My enthusiasm does not only exist for the outer reaches of the universe-- down here on Earth I enjoy spending my time in nature, by hiking and skiing, fencing épée and going to yoga classes. In my daily life I love sampling new foods and cuisines, traveling, and appreciating quality time with friends, family, and my three cats. Recently I have also spent time tinkering with PC building and car repair. I invite friends to play video and board games, or watch some of my favorite TV shows and films, which include indie titles, anime, and anything that involves a coming-of-age plotline. Overall I spend my days content being only one person of many on a pale blue dot we call home.

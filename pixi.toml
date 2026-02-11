@@ -1,0 +1,17 @@
+[workspace]
+authors = ["TheSkyentist <raphael.hviding@gmail.com>"]
+channels = ["conda-forge"]
+name = "TheSkyentist.github.io"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+compile-css = "sass theme/static/scss/main.scss theme/static/css/main.css"
+build = { cmd = "pelican content -o output -s pelicanconf.py", depends-on = ["compile-css"] }
+serve = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["compile-css"] }
+
+[dependencies]
+pelican = ">=4.11.0,<5"
+markdown = ">=3.10.2,<4"
+dart-sass = ">=1.59.1,<2"
+pillow = ">=12.1.1,<13"
