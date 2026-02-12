@@ -47,6 +47,9 @@ jobs:
         run: |
           pelican content -o output -s pelicanconf.py
 
+      - name: Remove favicon from output
+        run: rm -f output/favicon.ico
+
       - name: Commit changes
         run: |
           cd output
