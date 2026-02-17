@@ -34,60 +34,46 @@
 <!-- Highlights -->
 <section class="wrapper style2">
     <div class="container">
-        <div class="row 200%">
-            <section class="col-4 col-12-narrower">
-                <div class="box highlight">
-                    <i class="icon major fa-user"
-                        ><a href="{{ SITEURL }}/about.html"></a
-                    ></i>
-                    <h3>
-                        <a href="{{ SITEURL }}/about.html">About Me</a>
-                    </h3>
-                    <p>
-                        Learn more about who I am, my journey through astronomy
-                        from childhood wonder to professional research, and what
-                        I enjoy outside of the observatory.
-                    </p>
+        <!-- Astronomy Research: icon left, blurb right -->
+        <div class="row section-row">
+            <section class="col-3 col-12-narrower section-icon">
+                <div class="box highlight" style="text-align: center">
+                    <i class="icon major fa-keyboard-o"></i>
+                    <h3>Astronomy Research</h3>
                 </div>
             </section>
-            <section class="col-4 col-12-narrower">
-                <div class="box highlight">
-                    <i class="icon major fa-keyboard-o"
-                        ><a href="{{ SITEURL }}/research.html"></a
-                    ></i>
-                    <h3>
-                        <a href="{{ SITEURL }}/research.html"
-                            >Astronomy Research</a
-                        >
-                    </h3>
-                    <p>
-                        I am a Postdoctoral Researcher at the Max-Planck
-                        Institute for Astronomy working with
-                        <a
-                            href="https://www.mpia.de/institute/staff/122099"
-                            target="_blank"
-                            >Dr. Ivelina Momcheva</a
-                        >
-                        and as a member of the Data Science Group.
-                    </p>
+            <section class="col-9 col-12-narrower section-blurb">
+                <p>{{ page.research_blurb }}</p>
+            </section>
+        </div>
+
+        <hr />
+
+        <!-- Teaching, Mentoring, & Outreach: icon right, blurb left -->
+        <div class="row section-row">
+            <section class="col-9 col-12-narrower section-blurb">
+                <p>{{ page.teaching_blurb }}</p>
+            </section>
+            <section class="col-3 col-12-narrower section-icon">
+                <div class="box highlight" style="text-align: center">
+                    <i class="icon major fa-comments"></i>
+                    <h3>Teaching, Mentoring, &amp;&nbsp;Outreach</h3>
                 </div>
             </section>
-            <section class="col-4 col-12-narrower">
-                <div class="box highlight">
-                    <i class="icon major fa-comments"
-                        ><a href="{{ SITEURL }}/teaching.html"></a
-                    ></i>
-                    <h3>
-                        <a href="{{ SITEURL }}/teaching.html"
-                            >Teaching, Mentoring, &amp; Outreach</a
-                        >
-                    </h3>
-                    <p>
-                        From workshops and conference presentations to mentoring
-                        Spanish-speaking undergraduates through Astrocharlas, I
-                        work to make astronomy accessible and inclusive for all.
-                    </p>
+        </div>
+
+        <hr />
+
+        <!-- About Me: icon left, blurb right -->
+        <div class="row section-row">
+            <section class="col-3 col-12-narrower section-icon">
+                <div class="box highlight" style="text-align: center">
+                    <i class="icon major fa-user"></i>
+                    <h3>About Me</h3>
                 </div>
+            </section>
+            <section class="col-9 col-12-narrower section-blurb">
+                <p>{{ page.about_blurb }}</p>
             </section>
         </div>
     </div>

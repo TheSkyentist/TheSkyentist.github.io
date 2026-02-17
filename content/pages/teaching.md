@@ -1,10 +1,12 @@
 Title: Teaching, Mentoring, & Outreach
-Subtitle: Fostering the next generation of astronomers and bringing the universe to all
+Subtitle: Fostering Development for the Next Generation of Astronomers
 Template: page
 Slug: teaching
 Featured_image: public.jpg
 
-## Workshops
+## Data Science Workshops
+
+As a member of the [Data Science Department](https://www.mpia.de/institute/research-and-development/data-science) at M
 
 I regularly attend and present at workshops and conferences to share my research and connect with collaborators.
 

@@ -65,8 +65,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
 
-      - name: Remove favicon from output
-        run: rm -f output/favicon.ico
+      # - name: Remove favicon from output
+      #   run: rm -f output/favicon.ico
 
       - name: Deploy to SFTP
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

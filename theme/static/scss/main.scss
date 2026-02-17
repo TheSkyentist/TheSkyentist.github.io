@@ -1575,6 +1575,58 @@
 
 	}
 
+/* Section Rows — alternating icon/blurb layout */
+
+	.section-row {
+		display: flex;
+		align-items: center;
+
+		.section-blurb {
+			display: flex;
+			align-items: center;
+
+			p {
+				font-size: 1.1em;
+				margin: 0;
+			}
+		}
+	}
+
+	.section-row:last-child {
+		padding-bottom: 2em;
+	}
+
+	.wrapper.style2 hr {
+		border: 0;
+		border-top: 1px solid rgba(0, 0, 0, 0.15);
+		margin: 1.5em 0;
+	}
+
+	@include breakpoint('<=narrower') {
+		.section-row {
+			flex-direction: column;
+			text-align: center;
+
+			.section-icon {
+				order: -1;
+			}
+
+			.box.highlight {
+				text-align: center;
+				padding-left: 0;
+
+				i {
+					position: static;
+					margin-bottom: 1em;
+				}
+
+				h3 {
+					margin-bottom: -1em;
+				}
+			}
+		}
+	}
+
 /* Mobile (Portrait) */
 
 	@include breakpoint('<=mobilep') {
