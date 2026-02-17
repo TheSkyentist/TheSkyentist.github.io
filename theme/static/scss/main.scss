@@ -96,6 +96,12 @@
 		appearance: none;
 	}
 
+/* Restore code font after reset */
+
+	code {
+		font-family: monospace;
+	}
+
 /* Basic */
 
 	// Set box model to border-box.
@@ -968,7 +974,7 @@
 			position: absolute;
 			top: 30%;
 			left: 10%;
-			width: 100%;
+			width: 90%;
 			// background: rgba(27,27,27,0.75);
 			color: #fff;
 			padding: 1.5em 0;
@@ -1589,6 +1595,7 @@
 				font-size: 1.1em;
 				margin: 0;
 			}
+
 		}
 	}
 
