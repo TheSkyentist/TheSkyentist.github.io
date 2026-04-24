@@ -34,10 +34,9 @@ jobs:
           source: theme/static/scss/main.scss
           destination: theme/static/css/main.css
 
-      ─── Build galascii into content/galascii/ ───────────────────────────
-      Uncomment the four steps below once the galascii repo is published
-      at github.com/TheSkyentist/galascii. Until then this is a no-op so
-      the existing pipeline keeps working.
+      # ─── Build galascii into content/galascii/ ─────────────────────────
+      # Pulls the latest galascii main, builds it with the /galascii/ base,
+      # and drops the dist into content/ so Pelican copies it via STATIC_PATHS.
       - name: Set up Node
         uses: actions/setup-node@v4
         with:

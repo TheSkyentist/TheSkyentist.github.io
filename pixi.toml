@@ -7,8 +7,21 @@ version = "0.1.0"
 
 [tasks]
 compile-css = "sass theme/static/scss/main.scss theme/static/css/main.css"
-build = { cmd = "pelican content -o output -s pelicanconf.py", depends-on = ["compile-css"] }
-serve = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["compile-css"] }
+
+# Build the galascii applet from the sibling ../galascii checkout and drop
+# the dist into content/galascii/ so Pelican picks it up via STATIC_PATHS.
+# Logic lives in scripts/build-galascii.sh because pixi's task shell
+# doesn't support full bash (no if/then/fi).
+build-galascii = "bash scripts/build-galascii.sh"
+
+# Default build / serve include a fresh galascii so /galascii/ is always
+# in sync with the working copy of the sibling repo.
+build = { cmd = "pelican content -o output -s pelicanconf.py", depends-on = ["compile-css", "build-galascii"] }
+serve = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["compile-css", "build-galascii"] }
+
+# Skip the galascii rebuild when iterating on Pelican templates / content
+# and the existing content/galascii/ snapshot is good enough.
+serve-fast = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["compile-css"] }
 
 [dependencies]
 pelican = ">=4.11.0,<5"
