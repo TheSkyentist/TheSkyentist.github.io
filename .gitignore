@@ -18,3 +18,8 @@ venv/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# galascii is built fresh in CI from the TheSkyentist/galascii repo;
+# the local copy under content/galascii/ is just for `pelican --listen` previews.
+content/galascii/
+.galascii-src/

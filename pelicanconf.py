@@ -24,7 +24,7 @@ PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
 
 # Static files
-STATIC_PATHS = ['images', 'files', 'extra']
+STATIC_PATHS = ['images', 'files', 'extra', 'galascii']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/.nojekyll': {'path': '.nojekyll'},

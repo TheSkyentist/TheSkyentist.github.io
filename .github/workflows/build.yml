@@ -34,6 +34,29 @@ jobs:
           source: theme/static/scss/main.scss
           destination: theme/static/css/main.css
 
+      ─── Build galascii into content/galascii/ ───────────────────────────
+      Uncomment the four steps below once the galascii repo is published
+      at github.com/TheSkyentist/galascii. Until then this is a no-op so
+      the existing pipeline keeps working.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Check out galascii source
+        uses: actions/checkout@v4
+        with:
+          repository: TheSkyentist/galascii
+          path: .galascii-src
+      - name: Build galascii
+        working-directory: .galascii-src
+        run: |
+          npm ci
+          GASCIILAXY_BASE=/galascii/ npm run build
+      - name: Copy galascii into Pelican content
+        run: |
+          rm -rf content/galascii
+          cp -R .galascii-src/dist content/galascii
+
       - name: Set up Python
         uses: actions/setup-python@main
         with:
@@ -65,8 +88,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
 
-      # - name: Remove favicon from output
-      #   run: rm -f output/favicon.ico
+      - name: Remove favicon from output
+        run: rm -f output/favicon.ico
 
       - name: Deploy to SFTP
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
