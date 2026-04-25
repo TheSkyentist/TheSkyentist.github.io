@@ -1,26 +1,35 @@
 {% extends "base.html" %} {% block content %}
 <!-- Banner -->
 <section id="banner">
-    <header>
+    <header style="position: relative; z-index: 2">
         <h2 class="fade-in">
             <img src="{{ SITEURL }}/images/RH-logo.svg" /><br />
-            Professional Astronomer (He/His)
+            Astronomer & Data Scientist (He/His)
         </h2>
     </header>
 
-    {# ─── Banner visual ───────────────────────────────────────────────── #}
-    {# Default: banner.gif background (set on #banner in main.scss).      #}
-    {# To swap in the live ASCII galaxy instead, delete the {# … #}       #}
-    {# wrappers around the iframe + style override below.                 #}
-    {#
-    <iframe
-        src="{{ SITEURL }}/galascii/?embed=1#i=55;pa=23;omega=-8;arms=5;armA=0.85;pitch=22;hii=140;hiiLife=4"
+    {# ─── Banner visual ───────────────────────────────────────────────── #} {#
+    Default: banner.gif background (set on #banner in main.scss). #} {# To swap
+    in the live ASCII galaxy instead, delete the {# … #} #} {# wrappers around
+    the iframe + style override below. #}
+    <!--<iframe
+        src="{{ SITEURL }}/galascii/?embed=1#i=75;pa=0;fov=1.5;omega=-1.5;re=0.3;hR=1.9;arms=5;armA=0.6;pitch=22;dust=1.4;hii=60;hiiLife=5.5;exposure=5.2;oversample=2"
         title="ASCII galaxy"
         loading="lazy"
-        style="position:absolute; inset:0; width:100%; height:100%; border:0; z-index:1;"
+        style="
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            z-index: 1;
+        "
     ></iframe>
-    <style>#banner { background-image: none !important; }</style>
-    #}
+    <style>
+        #banner {
+            background-image: none !important;
+        }
+    </style>-->
 </section>
 
 <!-- Gigantic Heading -->

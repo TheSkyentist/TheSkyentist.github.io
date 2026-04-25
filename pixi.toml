@@ -10,9 +10,8 @@ compile-css = "sass theme/static/scss/main.scss theme/static/css/main.css"
 
 # Build the galascii applet from the sibling ../galascii checkout and drop
 # the dist into content/galascii/ so Pelican picks it up via STATIC_PATHS.
-# Logic lives in scripts/build-galascii.sh because pixi's task shell
-# doesn't support full bash (no if/then/fi).
-build-galascii = "bash scripts/build-galascii.sh"
+# Requires: git clone <galascii-repo> ../galascii
+build-galascii = "GASCIILAXY_BASE=/galascii/ npm --prefix ../galascii run build && rm -rf content/galascii && cp -R ../galascii/dist content/galascii"
 
 # Default build / serve include a fresh galascii so /galascii/ is always
 # in sync with the working copy of the sibling repo.
