@@ -3,7 +3,7 @@ authors = ["TheSkyentist <raphael.hviding@gmail.com>"]
 channels = ["conda-forge"]
 name = "TheSkyentist.github.io"
 platforms = ["osx-arm64"]
-version = "0.1.0"
+version = "1.0.0"
 
 [tasks]
 compile-css = "sass theme/static/scss/main.scss theme/static/css/main.css"
@@ -15,8 +15,8 @@ build-galascii = "GASCIILAXY_BASE=/galascii/ npm --prefix ../galascii run build 
 
 # Default build / serve include a fresh galascii so /galascii/ is always
 # in sync with the working copy of the sibling repo.
-build = { cmd = "pelican content -o output -s pelicanconf.py", depends-on = ["compile-css", "build-galascii"] }
-serve = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["compile-css", "build-galascii"] }
+build = { cmd = "pelican content -o output -s pelicanconf.py", depends-on = ["compile-css"] }
+serve = { cmd = "pelican --listen --autoreload -o output -s pelicanconf.py", depends-on = ["build"] }
 
 # Skip the galascii rebuild when iterating on Pelican templates / content
 # and the existing content/galascii/ snapshot is good enough.

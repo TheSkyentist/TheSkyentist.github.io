@@ -3,6 +3,7 @@
 
 # Ignore CSS (It will be compiled)
 main.css
+main.css.map
 
 # Pelican output directory
 output/

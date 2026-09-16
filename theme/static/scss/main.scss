@@ -1142,6 +1142,29 @@
 		}
 	}
 
+/* Toast */
+
+	.toast {
+		position: fixed;
+		left: 50%;
+		top: 2.5em;
+		transform: translate(-50%, -0.75em);
+		padding: 0.75em 1.5em;
+		border-radius: 4px;
+		background-color: _palette(accent, bg);
+		color: _palette(accent, fg);
+		font-size: 0.9em;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		z-index: 10000;
+
+		&.visible {
+			opacity: 1;
+			transform: translate(-50%, 0);
+		}
+	}
+
 /* Wide */
 
 	@include breakpoint('<=wide') {

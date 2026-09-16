@@ -53,7 +53,7 @@
                             >
                         </li>
                         <li>
-                            <a href="#cta">Contact</a>
+                            <a href="#cta" class="js-copy-email">Contact</a>
                         </li>
                         <li>
                             <a
@@ -74,6 +74,13 @@
             <!-- Icons -->
             <section id="cta" class="wrapper style3">
                 <ul class="icons">
+                    <li>
+                        <a
+                            href="mailto:hviding@mpia.de"
+                            class="icon fa-envelope js-copy-email"
+                            ><span class="label">Email</span></a
+                        >
+                    </li>
                     <li>
                         <a
                             href="https://www.github.com/TheSkyentist"
@@ -101,63 +108,7 @@
                 </ul>
             </section>
 
-            <!-- Contact -->
             <div id="footer">
-                <div class="container">
-                    <div class="row">
-                        <section class="col-3 col-12-narrower">
-                            <h2 align="center">Get In Touch</h2>
-                            <h2 align="center">
-                                <img
-                                    class="image circle"
-                                    src="{{ SITEURL }}/images/contact.jpg"
-                                    style="width: 128px; height: 128px"
-                                />
-                            </h2>
-                        </section>
-                        <section class="col-9 col-12-narrower">
-                            <form>
-                                <div class="row gtr-50">
-                                    <div class="col-6 col-12-mobilep">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            id="name"
-                                            placeholder="Name"
-                                        />
-                                    </div>
-                                    <div class="col-6 col-12-mobilep">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            id="email"
-                                            placeholder="Email"
-                                        />
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea
-                                            name="message"
-                                            id="message"
-                                            placeholder="Message"
-                                        ></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <ul class="actions">
-                                            <li>
-                                                <input
-                                                    type="submit"
-                                                    class="button alt"
-                                                    value="Send Message"
-                                                />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
-                </div>
-
                 <!-- Copyright -->
                 <div class="copyright">
                     <ul class="menu">
@@ -183,5 +134,6 @@
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/breakpoints.min.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/util.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/contact.js"></script>
     </body>
 </html>
